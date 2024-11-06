@@ -1,6 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 import Wizard from "./components/Wizard";
 import WizardStep from "./components/WizardStep";
 import VowelsForm from "./components/VowelsForm";
@@ -36,17 +34,21 @@ function App() {
           </WizardStep>
         </Wizard>
       </div>
-
-      <Wizard title="A form wizard">
-        <WizardStep>
-          <VowelsForm />
-        </WizardStep>
-        <WizardStep>
-          <h2>Step 2</h2>
-          <p>There is no Step 2</p>
-          <img src="https://i.pinimg.com/originals/c4/a8/56/c4a8562a0785c5c342ee856e4b3b55ae.gif" />
-        </WizardStep>
-      </Wizard>
+      <div className="vowels">
+        <Wizard title="A form wizard">
+          <WizardStep>
+            <VowelsForm />
+          </WizardStep>
+          <WizardStep>
+            <h2>Step 2</h2>
+            <p>There is no Step 2</p>
+            <img
+              src="https://i.pinimg.com/originals/c4/a8/56/c4a8562a0785c5c342ee856e4b3b55ae.gif"
+              alt="loading"
+            />
+          </WizardStep>
+        </Wizard>
+      </div>
     </div>
   );
 }

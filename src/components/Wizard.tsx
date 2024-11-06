@@ -13,15 +13,19 @@ const Wizard: React.FC<Props> = ({ title, children }) => {
 
   return (
     <div className="max-w-[1024px] mx-auto border border-red-500 py-8 m-8">
-      <h1>
+      <h1 title={title}>
         {title} - Step {stepIndex}
       </h1>
       {children[stepIndex]}
       <div className="space-x-4">
-        <Button onClick={() => setStepIndex(Math.max(stepIndex - 1, 0))}>
+        <Button
+          data-action="back"
+          onClick={() => setStepIndex(Math.max(stepIndex - 1, 0))}
+        >
           Back
         </Button>
         <Button
+          data-action="next"
           onClick={() => setStepIndex(Math.min(stepIndex + 1, stepCount))}
         >
           Next Step

@@ -28,7 +28,7 @@ const VowelsForm: React.FC<IProps> = (props: IProps) => {
         </label>
         <Button type="submit">Submit</Button>
       </div>
-      Vowels: {vowels}
+      Vowels: <span id="vowel-count">{vowels}</span>
     </form>
   );
 };
