@@ -4,11 +4,6 @@
   "private": true,
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.452.0",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,9 +11,14 @@
     "@types/node": "^16.11.39",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.452.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^4.7.3",
     "web-vitals": "^2.1.4"
   },
@@ -32,6 +32,22 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "e2e/**/*.ts"
+        ],
+        "plugins": [
+          "playwright"
+        ],
+        "extends": [
+          "plugin:playwright/recommended"
+        ],
+        "rules": {
+          "testing-library/prefer-screen-queries": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -47,6 +63,8 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "eslint-plugin-playwright": "^2.0.1",
     "tailwindcss": "^3.4.13"
   },
   "jest": {
